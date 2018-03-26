@@ -37,7 +37,8 @@
     "prepare": "git submodule update --init --recursive",
     "test": "yarn run test:pretty && yarn run test:jest",
     "test:jest": "jest *.js",
-    "test:pretty": "prettier-check --write --no-semi --single-quote --trailing-comma all ./index.js ./ReactNativeFastImageExample/FastImage/*.js ./react-native-fast-image-server/*.js"
+    "test:pretty": "prettier-check --write --no-semi --single-quote --trailing-comma all ./index.js ./ReactNativeFastImageExample/FastImage/*.js ./react-native-fast-image-server/*.js",
+    "postinstall": "git submodule update --init --recursive"
   },
   "dependencies": {
     "prop-types": "^15.5.10"
