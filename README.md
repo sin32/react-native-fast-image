@@ -3,6 +3,7 @@
 🚩 FastImage, performant React Native image component.
 
 [![npm](https://img.shields.io/npm/v/react-native-fast-image.svg?style=flat-square)](https://www.npmjs.com/package/react-native-fast-image)
+[![npm](https://img.shields.io/npm/dm/react-native-fast-image.svg?style=flat-square)](https://npmjs.com/package/react-native-fast-image)
 [![CircleCI](https://img.shields.io/circleci/project/github/DylanVann/react-native-fast-image.svg?style=flat-square)](https://circleci.com/gh/DylanVann/react-native-fast-image)
 [![license](https://img.shields.io/github/license/DylanVann/react-native-fast-image.svg?style=flat-square)](https://github.com/DylanVann/react-native-fast-image/blob/master/LICENSE)
 
@@ -43,12 +44,14 @@ and
 ## Usage
 
 ```bash
+# Install
 yarn add react-native-fast-image
+
+# Automatic linking. (other linking methods listed below)
 react-native link
 ```
 
-```js
-
+```jsx
 import FastImage from 'react-native-fast-image'
 
 const YourImage = () =>
@@ -61,6 +64,20 @@ const YourImage = () =>
     }}
     resizeMode={FastImage.resizeMode.contain}
   />
+```
+
+## Other Linking Methods
+
+- [Manual](docs/installation-manual.md) (might be needed if something went wrong with `react-native link`)
+- [CocoaPods (iOS)](docs/installation-cocoapods.md) (you may wish to use this if you are already using CocoaPods)
+
+## Proguard
+
+If you use Proguard you will need to add these lines to `android/app/proguard-rules.pro`:
+
+```
+-keep public class com.dylanvann.fastimage.* {*;}
+-keep public class com.dylanvann.fastimage.** {*;}
 ```
 
 ## Properties
@@ -156,6 +173,10 @@ FastImage.preload([
   },
 ])
 ```
+
+## Troubleshooting
+
+If you have any problems using this library try the steps in [troubleshooting](docs/troubleshooting.md) and see if they fix it.
 
 ## Development
 
