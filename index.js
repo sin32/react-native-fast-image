@@ -20,7 +20,7 @@ const useLocalImage = source => {
   // No uri.
   if (!source.uri) return true
   // Is a local Android image.
-  if (source.uri.startsWith('file://')) return true
+  if (Platform.OS === 'android' && source.uri.startsWith('file://')) return true
   // We have a remote source.
   return false
 }
